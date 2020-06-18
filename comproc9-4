@@ -1,0 +1,24 @@
+if test $# -lt 3
+   then niz=$(cat /home/grade/fileSisi)
+else niz=$3
+fi
+echo $niz
+fileC=find $pwd -type f  -name /*.c 
+fileOut=find $pwd -type f -name /*.out
+for each in $fileC
+    do mv $each $1
+done
+for each in $fileOut
+    do mv $each $2
+done
+count=$(expr $(find $(pwd) -type f |wc -l) - $(expr $(fileC|wc -l) + $(expr $(dileOut|wc -c))) )
+echo $count 
+if [ ! [-d $niz]
+  then mkdir $niz
+       for each in $fileC
+           do cat $each >>$(pwd)/$niz/ names
+       done
+       for each in $fileOut
+           do cat $each >> $(pwd)/$niz/names
+       done
+fi

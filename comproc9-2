@@ -1,0 +1,19 @@
+if test -d $1
+then
+      count1=find $1 -type f -name \*.txt  -exec wc -l {}\;
+fi
+if test -d $2
+then 
+      count2=find $2 -type f -name \*.txt -exec wc -l {}\;
+if [  $count1 -gt $count2 ]
+then 
+      read directory3
+      mkdir directory3
+      for i in $1/*
+      do 
+        if [ -f $i -a -r $i -a -w $i -a ! [-x $i] ]
+        then mv $i $PWD/directory3
+        fi
+      done
+fi
+

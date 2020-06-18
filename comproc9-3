@@ -1,0 +1,11 @@
+read message
+echo  $message > tmp
+cat $1 >> tmp
+shift
+ who -u|grep $user > /dev/null
+  then 
+      cat tmp|write $user
+  fi
+done
+
+

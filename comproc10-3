@@ -1,0 +1,21 @@
+if test $# -eq 2
+   then if test -f $1
+        then file=$1
+             shift
+             for user in $@
+             do 
+               if test $(who -u | grep $user | wc -l) -ge 1
+                   if [ $mesg="is n" ]
+                      then mesg y
+                      cat $1 | write user
+                      mesg n
+                   else cat $1 | write user 
+                   fi
+                   rm result
+                fi
+              done
+          fi
+fi
+
+  
+

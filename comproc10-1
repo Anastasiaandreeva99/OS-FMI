@@ -1,0 +1,13 @@
+if [ -d $1 ] && [ -d $2 ]
+then
+     cfiles1=$(find $1 -type f -name \*.c -print | wc -l )
+     cfiles2=$(find $2 -type f -name \*.c -print | wc -l)
+     cfiles=$(expr $cfiles1 + $cfiles2)
+     if test $cfiles -gt 20
+     then find $1 -type f -name \*.c  > sources.txt
+          find $2 -type f -name \*.c >> sources.txt
+          chmod  a=r sources.txt 
+     else echo "not enough files"
+     fi
+fi
+    
