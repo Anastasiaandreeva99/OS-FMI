@@ -1,0 +1,11 @@
+if test $(find .  -type d -name $1 > /dev/null)
+then for each in $(ls $1)
+     do 
+       if $(test -f $each )
+       then if $(test $(du $each | awk '{print $1}') -gt $2 )
+       then echo $each 
+       fi
+       fi
+     done
+else echo ERRROR
+fi
