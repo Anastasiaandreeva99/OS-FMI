@@ -1,0 +1,8 @@
+if [ ! $(find $(pwd) -type d -name $1)] 
+then 
+     mkdir $1
+fi
+ourfiles=$(find $(pwd) -type f -perm -o=rw)
+cp $ourfiles $1
+
+
