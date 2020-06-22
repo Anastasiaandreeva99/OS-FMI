@@ -1,0 +1,20 @@
+read dir
+files=$(find $(pwd) -type f -name \???)
+ls $files -l
+files2=$(find $(pwd) -type f -name f\*)
+for each in $files2 
+    do cp $each $dir
+done
+i=0
+num=0;
+for each in $dir
+    do if file $each|grep ASCII > /dev/null && [$i -lt 6] 
+          then $each >> names
+               i=$(expr $i + 1)
+       elif $each=\*.c
+          then num=$(expr $num + 1) 
+       fi
+done
+
+
+

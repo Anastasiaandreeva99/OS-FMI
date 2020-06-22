@@ -1,0 +1,14 @@
+read direct
+mkdir $direct
+this=$(pwd)
+cd
+cp $find ../ -type -name "a/*") $this/$dir
+cd $this
+rm $(find $(pwd) -type f -name "/*.c")
+mv $(find $HOME/dir -type f -name "/?/?") $(pwd)
+if [ $(ls $HOME/dir|wc -l)==0 ]
+then rm dir
+fi
+
+
+

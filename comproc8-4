@@ -1,0 +1,3 @@
+echo ps -aux|awk '/$1/{print $2}'|wc -l
+kill $(ps -aux|awk '/$1/{print $2}')
+

@@ -1,0 +1,10 @@
+read file
+file=head -n 1 $file
+niz=tail -n 1 $file
+grep $niz $file|wc -l
+read file2
+users|sort > $file2
+user=who -u|head -n 1|cut -d " " -f1
+cat $file2 | tr "[a-z]" "[A-Z]" |write $user
+
+

@@ -1,0 +1,7 @@
+read file niz
+len1=$(echo $file1|wc -c)
+len2=$(echo $niz|wc -c)
+razlika=$(expr $len2 - $len1)
+size=$(cat $file|wc -c)
+echo $(expr $size \* $razlika)
+

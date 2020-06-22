@@ -1,0 +1,4 @@
+read niz 
+for each in $@
+do grep $niz $each|wc -l
+done 

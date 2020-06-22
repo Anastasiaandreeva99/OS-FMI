@@ -1,0 +1,5 @@
+until $(who -u|awk "/$1" > /dev/null)
+do 
+  sleep 30
+done
+

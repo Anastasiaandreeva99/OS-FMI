@@ -1,0 +1,4 @@
+if who |grep $2 > /dev/null
+then du $1|tail -n 1|awk '{print $1}'|write $2
+fi
+

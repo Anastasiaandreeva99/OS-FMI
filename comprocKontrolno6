@@ -1,0 +1,21 @@
+if [ $# -lt 3 ]
+then 
+    echo "not enough parameters"
+else 
+    read file
+    number1=$1
+    number2=$2
+    shift 2
+    for each in $@
+    do 
+       razlika=$(expr $(ls -a $each|wc -c) - $(ls $each |wc -c))
+       if [ razlika -gt num1 -a razlika -lt num2 ]
+       then 
+             echo $each
+       else 
+             echo $each $razlika >> $file
+       fi
+       sleep 100
+    done
+fi
+

@@ -1,0 +1,7 @@
+cat $1 > help
+name=$2
+cp $2 $1
+cp help $name
+rm help
+cat $1
+cat $name

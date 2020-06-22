@@ -1,0 +1,13 @@
+if [ $# -lt 2]
+then
+     set $1 $HOME
+fi
+for each in $2
+do 
+    processes=ps -ux |wc -l
+    processes2=ps aux | wc -l
+    if [ processes -gt 5 -o processes2 -gt 100 ]
+    then  
+        kilproc=ps -u|head -n2 |tail -n1|cut -d " " -f6
+        kill -9 $(tail -n1 $kilproc
+        cc -o $each &
